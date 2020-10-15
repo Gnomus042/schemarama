@@ -18,3 +18,8 @@ You can install all requirements from ```requirements.txt``` and run it with
 Alternatively, you can build and run it in Docker: <br />
 ```docker build -t scc .```<br />
 ```docker run -p 5000:5000 scc```<br />
+
+**IMPORTANT** <br />
+This demo won't work without the schemarama.bundle. You should build it from the 
+*core* validation package, using the webpack bundler. Then you should place it in 
+the ```demo/static/js/libs``` folder.
