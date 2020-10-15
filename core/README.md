@@ -4,6 +4,11 @@ NodeJs project for validating Sturctured Data with ShEx (SHACL coming soon). Is 
 - parsing JSON-LS, Microdata, RDFa data using n3;
 - validating structures data against ShEx shapes using a minified version of shex.js.
 
+## Webpack
+To use this module in the browser, you need to create a bundle with webpack module bundler:<br />
+1. ```npm install --save-dev webpack webpack-cli```
+2. ```npx webpack --config webpack.config.js```
+3. Collect the created bundle from the dist folder
 ## Cli mode
 To use this project as a cli, first you need to do an ```npm install```
 ### Parsing: 
