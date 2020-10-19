@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Anastasiia Byvsheva & Dan Brickley
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ function writeResult(val, args) {
 }
 
 function writeQuads(quads, output, format) {
-    let writer = new n3.Writer({format: cliFormatToN3(format)});
+    let writer = new n3.Writer({ format: cliFormatToN3(format) });
     quads.forEach(quad => writer.addQuad(quad.subject, quad.predicate, quad.object));
     writer.end((error, result) => {
         if (error) throw new CliError(error);
@@ -66,8 +66,8 @@ async function validateShEx(data, base, args) {
     args.service = args.service || '';
     let shapes = await utils.loadData(args.shex);
     let annotations = args.annotations ? JSON.parse(await utils.loadData(args.annotations)) : undefined;
-    let validator = new ShexValidator(shapes, {annotations: annotations});
-    let report = await validator.validate(data, args.target, {baseUrl: base});
+    let validator = new ShexValidator(shapes, { annotations: annotations });
+    let report = await validator.validate(data, args.target, { baseUrl: base });
     writeResult(JSON.stringify(report.failures, undefined, 2), args);
 }
 
@@ -84,7 +84,7 @@ async function validateShacl(data, base, args) {
         subclasses: subclasses,
         annotations: annotations
     });
-    let report = validator.validate(data, {baseUrl: base});
+    let report = validator.validate(data, { baseUrl: base });
     writeResult(JSON.stringify(report.failures, undefined, 2), args);
 }
 

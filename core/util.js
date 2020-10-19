@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Anastasiia Byvsheva & Dan Brickley
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,7 +92,7 @@ async function parseRdfa(text, baseUrl) {
     const textStream = streamify(text);
     return new Promise((res, rej) => {
         let store = new Store();
-        const rdfaParser = new RdfaParser({baseIRI: baseUrl, contentType: 'text/html'});
+        const rdfaParser = new RdfaParser({ baseIRI: baseUrl, contentType: 'text/html' });
         textStream.pipe(rdfaParser)
             .on('data', quad => {
                 store.addQuad(quad);
@@ -110,7 +110,7 @@ async function parseRdfa(text, baseUrl) {
  * @return {Store}
  */
 async function parseMicrodata(text, baseUrl) {
-    const nquads = microdata.toRdf(text, {base: baseUrl}).split('_:0').join(`<${baseUrl}>`);
+    const nquads = microdata.toRdf(text, { base: baseUrl }).split('_:0').join(`<${baseUrl}>`);
     if (nquads.length === 0) throw errors.InvalidDataError('Format is not Microdata');
     return parseTurtle(nquads, baseUrl);
 }

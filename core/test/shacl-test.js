@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Anastasiia Byvsheva & Dan Brickley
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ async function test(validator, test, valid) {
 describe('SHACL Missing property tests', function () {
     let shapes = fs.readFileSync(path.join(shapesPath, 'Schema.shacl')).toString();
     let subclasses = fs.readFileSync(path.join(utilsPath, 'Schema-subclasses.ttl')).toString();
-    let validator = new ShaclValidator(shapes, {subclasses: subclasses});
+    let validator = new ShaclValidator(shapes, { subclasses: subclasses });
     it("should return error if the property is missing", function () {
         return test(validator, 'Thing1.txt', 'Thing-mp.json');
     });
@@ -61,7 +61,7 @@ describe('SHACL Missing property tests', function () {
 describe('SHACL Type mismatch tests', function () {
     let shapes = fs.readFileSync(path.join(shapesPath, 'Schema.shacl')).toString();
     let subclasses = fs.readFileSync(path.join(utilsPath, 'Schema-subclasses.ttl')).toString();
-    let validator = new ShaclValidator(shapes, {subclasses: subclasses});
+    let validator = new ShaclValidator(shapes, { subclasses: subclasses });
     it("should fail with TypeMismatch if regex is failing", function () {
         return test(validator, 'Thing3.txt', 'Thing-tm.json');
     });
@@ -77,7 +77,7 @@ describe('SHACL Annotation tests', function () {
         description: 'http://www.w3.org/2000/01/rdf-schema#comment',
         severity: 'http://www.w3.org/2000/01/rdf-schema#label'
     }
-    let validator = new ShaclValidator(shapes, {subclasses: subclasses, annotations: annotations});
+    let validator = new ShaclValidator(shapes, { subclasses: subclasses, annotations: annotations });
     it("should add annotations if specified", function () {
         return test(validator, 'Thing4.txt', 'Thing-tmmp-annot.json');
     });
@@ -87,7 +87,7 @@ describe('SHACL Annotation tests', function () {
 describe('SHACL Extension tests', function () {
     let shapes = fs.readFileSync(path.join(shapesPath, 'Schema.shacl')).toString();
     let subclasses = fs.readFileSync(path.join(utilsPath, 'Schema-subclasses.ttl')).toString();
-    let validator = new ShaclValidator(shapes, {subclasses: subclasses});
+    let validator = new ShaclValidator(shapes, { subclasses: subclasses });
     it("should deal with extensions", function () {
         return test(validator, 'CreativeWork1.txt', 'CreativeWork-extension.json');
     });
@@ -96,7 +96,7 @@ describe('SHACL Extension tests', function () {
 describe('SHACL Input data formats tests', function () {
     let shapes = fs.readFileSync(path.join(shapesPath, 'Schema.shacl')).toString();
     let subclasses = fs.readFileSync(path.join(utilsPath, 'Schema-subclasses.ttl')).toString();
-    let validator = new ShaclValidator(shapes, {subclasses: subclasses});
+    let validator = new ShaclValidator(shapes, { subclasses: subclasses });
     it("should support JSON-LD", function () {
         return test(validator, 'Thing4.txt', 'Thing-tmmp.json');
     });

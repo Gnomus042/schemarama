@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Anastasiia Byvsheva & Dan Brickley
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ function stringifyFailure(failure) {
 describe('Parsing tests', function () {
     let baseUrl = 'http://example.org/test';
     let parseCli = (input, base) => {
-        let command =`node cli --parse ` +
+        let command = `node cli --parse ` +
             `--input ${input} ` +
             `--format nquads ` +
             `--output ${tempPath} ` +

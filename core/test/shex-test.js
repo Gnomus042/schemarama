@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Anastasiia Byvsheva & Dan Brickley
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ describe('ShEx Annotation tests', function () {
         description: 'http://www.w3.org/2000/01/rdf-schema#comment',
         severity: 'http://www.w3.org/2000/01/rdf-schema#label'
     }
-    let validator = new ShexValidator(shapes, {annotations: annotations});
+    let validator = new ShexValidator(shapes, { annotations: annotations });
     it("should add annotations if specified", function () {
         return test(validator, 'Thing4.txt', 'Thing-tmmp-annot.json', 'https://schema.org/validation#Thing');
     });

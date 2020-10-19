@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Anastasiia Byvsheva & Dan Brickley
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ $(document).ready(async () => {
     await $.get(`services/map`, (res) => shapeToService = res);
     $.get(`tests`, (res) => initTests(res.tests));
 
-    shexValidator = new schemarama.ShexValidator(shexShapes, {annotations: annotations});
+    shexValidator = new schemarama.ShexValidator(shexShapes, { annotations: annotations });
     shaclValidator = new schemarama.ShaclValidator(shaclShapes, {
         annotations: annotations,
         subclasses: subclasses,
@@ -55,7 +55,7 @@ async function getType(data, baseUrl) {
     }
 }
 
-function randomString(length=16) {
+function randomString(length = 16) {
     let result = '';
     let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     for (let i = 0; i < length; i++) {
@@ -91,7 +91,7 @@ function parseDataItems(dataset, shapeId, indent) {
     return dataItems;
 }
 
-function minifyFailuresList (failures) {
+function minifyFailuresList(failures) {
     let properties = {};
     failures.forEach(item => {
         let key = item.property;

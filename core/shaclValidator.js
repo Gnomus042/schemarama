@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Anastasiia Byvsheva & Dan Brickley
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -101,7 +101,7 @@ class ShaclValidator {
      * @param {{baseUrl: string|undefined}} options
      * @returns {Promise<{baseUrl: string, quads: Store, failures: [StructuredDataFailure]}>}
      */
-    async validate(data, options={}) {
+    async validate(data, options = {}) {
         let baseUrl = options.baseUrl || utils.randomUrl();
         let quads = await utils.inputToQuads(data, baseUrl);
         let report;

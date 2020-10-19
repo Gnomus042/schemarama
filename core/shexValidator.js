@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 Anastasiia Byvsheva & Dan Brickley
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,7 +195,7 @@ class ShexValidator {
      * @param {object|string} shapes - ShExJ shapes
      * @param {{annotations:object|undefined}} options
      */
-    constructor(shapes, options={}) {
+    constructor(shapes, options = {}) {
         if (typeof shapes === 'string') {
             this.shapes = shex.Parser.construct('', {}, {}).parse(shapes);
         } else {
@@ -237,4 +237,4 @@ class ShexValidator {
  * }} StructuredDataFailure
  */
 
-module.exports = {Validator: ShexValidator}
+module.exports = { Validator: ShexValidator }
