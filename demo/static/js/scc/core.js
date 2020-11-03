@@ -72,18 +72,21 @@ async function validate(data, lang) {
         } else if (lang === 'shacl') {
             report = await validateShacl(shape, id);
         }
-        let dataItems = parseDataItems(report.store, report.baseUrl, 0);
+        let dataItems = parseDataItems(report.store, report.baseUrl, 0, []);
         addReport(type, minifyFailuresList(report.failures), dataItems);
     }
 
 }
 
-function parseDataItems(dataset, shapeId, indent) {
+function parseDataItems(dataset, shapeId, indent, used) {
+    used.push(shapeId);
     let dataItems = [];
     let shape = dataset.getQuads(shapeId, undefined, undefined);
     shape.forEach(quad => {
-        dataItems.push(dataItemLayout(quad.predicate.value, quad.object.value, indent));
-        dataItems.push(...parseDataItems(dataset, quad.object, indent + 1));
+        dataItems.push(dataItemLayout(quad.predicate.value, quad.object.id, indent));
+        if (!used.includes(quad.object.id) && dataset.getQuads(quad.object.id, undefined, undefined).length > 0) {
+            dataItems.push(...parseDataItems(dataset, quad.object.id, indent + 1, used));
+        }
     });
     return dataItems;
 }
