@@ -32,7 +32,7 @@
     // techdoc:description "A short summary describing the dish.."
     // techdoc:identifier "warning";
 
-    schema:keywords .
+    schema:keywords . +
     // techdoc:url "https://schema.org/keywords"
     // techdoc:description "Other terms for your recipe such as the season, the holiday, or other descriptors."
     // techdoc:identifier "warning";

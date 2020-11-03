@@ -4730,7 +4730,7 @@ BASE <http://schema.org/shex>
     // techdoc:description "Summary describing the recipe."
     // techdoc:identifier "warning";
 
-    schema:image .
+    schema:image . +
     // techdoc:url "https://schema.org/image"
     // techdoc:description "Picture associated with the recipe. This can be a picture of the dish or the ingredients of the dish."
     // techdoc:identifier "warning";
@@ -4813,7 +4813,7 @@ BASE <http://schema.org/shex>
     // techdoc:description "An identifier, such as a DOI or a Compact Identifier."
     // techdoc:identifier "warning";
 
-    schema:keywords .
+    schema:keywords . +
     // techdoc:url "https://schema.org/keywords"
     // techdoc:description "Keywords summarizing the dataset."
     // techdoc:identifier "warning";

@@ -39,7 +39,7 @@
     // techdoc:description "An identifier, such as a DOI or a Compact Identifier."
     // techdoc:identifier "warning";
 
-    schema:keywords .
+    schema:keywords . +
     // techdoc:url "https://schema.org/keywords"
     // techdoc:description "Keywords summarizing the dataset."
     // techdoc:identifier "warning";

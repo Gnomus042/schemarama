@@ -23,7 +23,7 @@
     // techdoc:description "Summary describing the recipe."
     // techdoc:identifier "warning";
 
-    schema:image .
+    schema:image . +
     // techdoc:url "https://schema.org/image"
     // techdoc:description "Picture associated with the recipe. This can be a picture of the dish or the ingredients of the dish."
     // techdoc:identifier "warning";
