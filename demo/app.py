@@ -62,7 +62,7 @@ def shacl_shapes_full():
 @app.route('/shacl/subclasses')
 def shacl_subclasses():
     subclasses_path = os.path.join(os.curdir, 'validation', 'shacl', 'subclasses.ttl')
-    return open(subclasses_path).read()
+    return send_file(subclasses_path)
 
 
 if __name__ == '__main__':

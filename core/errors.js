@@ -30,5 +30,4 @@ class ShexValidationError extends Error {
 module.exports = {
     InvalidDataError: InvalidDataError,
     ShexValidationError: ShexValidationError,
-
 }
