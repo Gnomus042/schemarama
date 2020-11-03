@@ -1,5 +1,5 @@
 # Schema.org Content Checker CORE
-NodeJs project for validating Sturctured Data with ShEx (SHACL coming soon). Is mainly used in a form of a bundle as a core part of the Schema.org Content Checker demo (https://www.gnomus042.com/). <br /><br />
+NodeJs project for validating Structured Data with ShEx (SHACL coming soon). Mainly used in the form of a bundle as a core part of the Schema.org Content Checker demo. <br /><br />
 **Main tasks:**
 - parsing JSON-LS, Microdata, RDFa data using n3;
 - validating structures data against ShEx shapes using a minified version of shex.js.
