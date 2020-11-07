@@ -1,3 +1,4 @@
+let UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
@@ -5,12 +6,15 @@ module.exports = {
         modules: ['./node_modules']
     },
     optimization: {
-        minimize: false
+        minimize: true,
     },
     output: {
-        filename: 'schemarama.bundle.js',
+        filename: 'schemarama.bundle.min.js',
         library: 'schemarama'
     },
+    plugins: [
+        new UnminifiedWebpackPlugin()
+    ],
     node: {
         tls: "empty",
         fs: "empty",
