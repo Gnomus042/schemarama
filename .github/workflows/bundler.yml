@@ -14,6 +14,8 @@ jobs:
       uses: actions/checkout@v2
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.1.2
+    - name: cd to core
+      run: cd core
     - name: Install node_modules
       run: npm install
     - name: Install gulp
