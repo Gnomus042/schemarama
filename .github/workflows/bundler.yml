@@ -3,7 +3,7 @@ on:
   push:
     branches:
     - master
-    - staging
+    - github-action-for-webpack
 
 jobs:
   yarn:
