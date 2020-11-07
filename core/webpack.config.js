@@ -11,9 +11,9 @@ module.exports = {
         filename: 'schemarama.bundle.js',
         library: 'schemarama'
     },
-    node: {
-        tls: "empty",
-        fs: "empty",
-        net: "empty"
+    resolve: {
+      fallback: {
+        fs: false
+      }
     }
 };
