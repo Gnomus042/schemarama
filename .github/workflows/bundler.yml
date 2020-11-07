@@ -1,23 +1,44 @@
-name: Build assets
+name: Build schemarama.bundle.js
 on:
   push:
     branches:
     - master
-    - staging
+    - github-action-for-webpack
 
 jobs:
   yarn:
-    name: Yarn
+    name: Build schemarama.bundle.js
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: npm install
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.1.2
+    - name: Install node_modules
       run: npm install
-    - name: webpack
+    - name: Install gulp
+      run: npm install -G gulp
+    - name: Build webpack
       run: npx webpack --config webpack.config.js
-    - name: Archive production artifacts
+    - name: Build parsing
+      run: gulp parsing
+    - name: Archive schemarama.bundle.js
+      uses: actions/upload-artifact@v1
+      with:
+        name: bundles
+        path: dist/schemarama.bundle.js
+    - name: Archive schemarama.bundle.min.js
+      uses: actions/upload-artifact@v1
+      with:
+        name: bundles
+        path: dist/schemarama.bundle.min.js
+    - name: Archive schemarama-parsing.bundle.js
       uses: actions/upload-artifact@v1
       with:
         name: build
-        path: dist
+        path: dist/schemarama-parsing.bundle.js
+    - name: Archive schemarama-parsing.bundle.min.js
+      uses: actions/upload-artifact@v1
+      with:
+        name: build
+        path: dist/schemarama-parsing.bundle.min.js
