@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schema.org Content Checker (work-in-progress)</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/scc.css">
+</head>
+<body>
+<div class="header">
+    <div class="title">Schema.org Content Checker (work-in-progress)</div>
+    <div class="d-flex">
+        <div class="lang-selector">
+            <label for="validation-lang-select">Validation language</label>
+            <select class="form-control" name="validation-lang-select" id="validation-lang-select">
+                <option value="shex">ShEx</option>
+                <option value="shacl">SHACL</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div id="validate-btn"><img src="images/icons/play_arrow.svg"
+                                alt="validate"></div>
+    <div class="block input-block">
+        <textarea class="form-control" name="input-text" id="input-text" cols="30" rows="10"></textarea>
+        <div class="tests-display">
+            <div class="tests d-none"></div>
+            <div id="show-tests-btn">Show tests</div>
+        </div>
+    </div>
+    <div class="block output-block">
+        <div class="hierarchy">
+            <div class="title">Hierarchy</div>
+            <div class="h-items"></div>
+        </div>
+        <div class="reports"></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="validation/shape-to-service.js"></script>
+<script src="validation/tests.js"></script>
+<script src="validation/shex-shapes.js"></script>
+<script src="validation/shacl-shapes.js"></script>
+<script src="validation/subclasses.js"></script>
+<script src="validation/hierarchy.js"></script>
+<script src="js/schemarama.bundle.js"></script>
+<script src="js/shex.js"></script>
+<script src="js/shacl.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/core.js"></script>
+</body>
+</html>
