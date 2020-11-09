@@ -39,10 +39,10 @@ jobs:
     - name: Archive schemarama-parsing.bundle.js
       uses: actions/upload-artifact@v1
       with:
-        name: build
+        name: parsing-bundles
         path: core/dist/schemarama-parsing.bundle.js
     - name: Archive schemarama-parsing.bundle.min.js
       uses: actions/upload-artifact@v1
       with:
-        name: build
+        name: parsing-bundles
         path: core/dist/schemarama-parsing.bundle.min.js
