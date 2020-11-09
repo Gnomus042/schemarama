@@ -70,12 +70,12 @@ function dataItemLayout(predicate, object, indent) {
 function failureLayout(failure, type) {
     let services = failure.services.map(x => {
         return `<a href="${x.url || ''}" title="${x.description || ""}">
-            <img class="service-icon" src="images/services/${x.service}.png" alt="${x.service}"/>
+            <img class="service-icon" src="pages/images/services/${x.service}.png" alt="${x.service}"/>
         </a>`
     }).join('');
     return `<div class="failure ${type}">
         <div class="property">
-            <img src="images/icons/${type}.svg" alt="${type}">
+            <img src="pages/images/icons/${type}.svg" alt="${type}">
             <div>${replacePrefix(failure.property)}</div>
         </div>
         <div class="message">
@@ -113,7 +113,7 @@ function constructHierarchySelector(data, indent) {
     $('.h-items').append(`<div class="h-item">
           <div style="width: ${indent * 30}px"></div>
           <input type="checkbox" checked id="${name}" class="form-control">
-          <div> <img src="images/services/${name}.png" class="service-icon" alt="${name}"> ${name}</div>
+          <div> <img src="pages/images/services/${name}.png" class="service-icon" alt="${name}"> ${name}</div>
      </div>`);
     $(`#${name}`).change(function () {
         data.disabled = !this.checked;
